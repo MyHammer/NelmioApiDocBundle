@@ -75,7 +75,7 @@ final class FormModelDescriber implements ModelDescriberInterface, ModelRegistry
                 $schema->setRequired($required);
             }
 
-            $property->merge($config->getOption('documentation'));
+            $property->merge($config->getOption('documentation') ?: []);
             if (null !== $property->getType()) {
                 continue; // Type manually defined
             }
